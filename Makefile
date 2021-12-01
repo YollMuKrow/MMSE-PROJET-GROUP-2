@@ -2,18 +2,19 @@ CC = /bin/avr-gcc
 F_CPU = 13000000
 MCU = atmega328p
 PORT = /dev/ttyS0
+SOURCE = projet
 
-main.out: main.c
+$(SOURCE).out: $(SOURCE).c
 	$(CC) $^ -o $@ -DF_CPU=$(F_CPU) -mmcu=$(MCU) -Os
 
-main.bin: main.out
+$(SOURCE).bin: $(SOURCE).out
 	avr-objcopy -O binary $^ $@
 
-flash: main.bin
+flash: $(SOURCE).bin
 	avrdude -c usbasp -p m328p -P $(PORT) -U flash:w:$^
 
 all:
-	main.bin
+	$(SOURCE).bin
 
 read:
 	stty -F $(PORT) 9600

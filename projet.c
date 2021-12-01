@@ -7,13 +7,13 @@
 
 int main() {
     // Pin is output(low independence)
-    DDRB |= _BV(PB5);
+    DDRD |= _BV(PD6);
 
     // Pin is high level (5v)
     while(1){
-        PORTB |= _BV(PB5);
+        PORTD |= _BV(PD6);
         _delay_ms(500);
-        PORTB &= ~_BV(PB5);
+        PORTD &= ~_BV(PD6);
         _delay_ms(500);
 
     }
