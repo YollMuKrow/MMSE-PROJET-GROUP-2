@@ -19,4 +19,4 @@ Réel : 15 546 260  secondes\
 
 Efficacité : \
 interruption -> incrémentation de l’heure = 17 cycles\
-Bluetooth -> réception = 5 à 16 cycles\
+Bluetooth -> réception = 5 à 16 cycles
